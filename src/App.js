@@ -11,9 +11,9 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      <div className="app-container bg-black text-white min-h-screen flex flex-col">
+      <div className="app-container bg-black text-white h-full flex flex-col">
         <Header />
-        <main className="flex-grow">
+        <main className="flex h-full flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/videos" element={<Videos />} />

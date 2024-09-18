@@ -39,12 +39,18 @@ html {
 }
 
 #root {
-  /* height: 100%;
-  width: 100%; */
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
 }
 
 main {
   flex-grow: 1;
+}
+
+main > div:first-child,
+main > section:first-child {
+  width: 100%;
 }
 
 /* Basic heading styles */
@@ -118,4 +124,16 @@ textarea {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Full height slider styles */
+.full-height-slider {
+  /* height: 100%; */
+  height: calc(100% - 120px);
+}
+
+.full-height-slider .slick-list,
+.full-height-slider .slick-track,
+.full-height-slider .slick-slide > div {
+  height: 100%;
 }

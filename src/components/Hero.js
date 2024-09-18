@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="w-full bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-400">
@@ -14,10 +14,10 @@ const Hero = () => {
           </p>
           <div className="space-x-4">
             <Link
-              to="/about"
+              to="/github"
               className="bg-black text-blue-300 px-6 py-3 rounded-lg font-semibold border border-blue-300 hover:text-green-100 transition duration-300"
             >
-              Learn More
+              Check out our repos
             </Link>
             <Link
               to="/videos"
