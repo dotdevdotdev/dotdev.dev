@@ -12,6 +12,14 @@ const Header = () => {
           <ul className="flex space-x-6">
             <li>
               <Link
+                to="/free-apps"
+                className="text-blue-300 hover:text-green-100 transition duration-300"
+              >
+                Free Apps
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/videos"
                 className="text-blue-300 hover:text-green-100 transition duration-300"
               >

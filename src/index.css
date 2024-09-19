@@ -95,29 +95,82 @@ a:hover {
   color: #f0fff4; /* text-green-100 */
 }
 
-/* Basic button styles */
-button {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+/* Custom button styles */
+.btn {
+  @apply font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out;
 }
 
-button:hover {
-  background-color: #2980b9;
+.btn-green-outline {
+  @apply btn bg-transparent border text-green-300  border-green-300;
 }
 
-/* Basic input styles */
-input,
-textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.btn-green-outline:hover {
+  @apply bg-green-300 text-black;
+}
+
+.btn-green-solid {
+  @apply btn bg-green-300 text-black;
+}
+
+.btn-green-solid:hover {
+  @apply bg-green-400;
+}
+
+.btn-green-transparent {
+  @apply btn bg-transparent text-green-300;
+}
+
+.btn-green-transparent:hover {
+  @apply bg-green-300 bg-opacity-20;
+}
+
+.btn-blue-outline {
+  @apply btn bg-transparent border text-blue-300  border-blue-300;
+}
+
+.btn-blue-outline:hover {
+  @apply bg-blue-300 text-black;
+}
+
+.btn-blue-solid {
+  @apply btn bg-blue-300 text-black;
+}
+
+.btn-blue-solid:hover {
+  @apply bg-blue-400;
+}
+
+.btn-blue-transparent {
+  @apply btn bg-transparent text-blue-300;
+}
+
+.btn-blue-transparent:hover {
+  @apply bg-blue-300 bg-opacity-20;
+}
+
+/* Custom input styles */
+.input {
+  @apply w-full py-2 px-3 rounded-lg transition duration-300 ease-in-out focus:outline-none;
+}
+
+.input-default {
+  @apply input bg-blue-300 bg-opacity-15 text-white font-bold border border-blue-300 focus:border-green-300;
+}
+
+.input-green-outline {
+  @apply input bg-transparent border border-green-300 text-green-300 focus:border-green-400;
+}
+
+.input-green-solid {
+  @apply input bg-green-300 border border-green-300 text-black focus:bg-green-400 focus:border-green-400;
+}
+
+.input-blue-outline {
+  @apply input bg-transparent border border-blue-300 text-blue-300 focus:border-blue-400;
+}
+
+.input-blue-solid {
+  @apply input bg-blue-300 border border-blue-300 text-black focus:bg-blue-400 focus:border-blue-400;
 }
 
 /* Responsive images */
@@ -129,7 +182,7 @@ img {
 /* Full height slider styles */
 .full-height-slider {
   /* height: 100%; */
-  height: calc(100% - 120px);
+  height: calc(100% - 80px);
 }
 
 .full-height-slider .slick-list,

@@ -6,6 +6,7 @@ import Videos from "./pages/Videos";
 import Discord from "./pages/Discord";
 import Patreon from "./pages/Patreon";
 import GitHub from "./pages/GitHub";
+import FreeApps from "./pages/FreeApps";
 import Footer from "./components/Footer";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/discord" element={<Discord />} />
             <Route path="/patreon" element={<Patreon />} />
             <Route path="/github" element={<GitHub />} />
+            <Route path="/free-apps" element={<FreeApps />} />
           </Routes>
         </main>
         <Footer />

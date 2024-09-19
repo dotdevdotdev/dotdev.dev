@@ -7,7 +7,11 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@octokit/rest": "^21.0.2",
     "assert": "^2.1.0",
+    "axios": "^0.21.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.1",
     "framer-motion": "^10.12.16",
+    "mongodb": "^6.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^4.10.1",
@@ -22,7 +26,8 @@
     "url": "^0.11.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run server\" \"cross-env NODE_NO_WARNINGS=1 react-scripts start\"",
+    "server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,7 +51,8 @@
     ]
   },
   "devDependencies": {
-    "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.2.1"
-  }
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3"
+  },
+  "proxy": "http://localhost:5000"
 }
