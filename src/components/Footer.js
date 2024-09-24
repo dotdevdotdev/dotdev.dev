@@ -4,14 +4,16 @@ const Footer = () => {
   return (
     <footer className="bg-black py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between">
+        <div className="flex justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2 text-green-400 ">.dev</h3>
+            <h3 className="text-xl font-bold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
+              .dev
+            </h3>
             <p className="text-sm">© 2024 dotdev.</p>
             <p className="text-sm"> All rights reserved.</p>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h4 className="text-lg font-semibold mb-2 text-green-400 ">
+            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
               Quick Links
             </h4>
             <ul className="text-sm">
@@ -23,7 +25,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h4 className="text-lg font-semibold mb-2 text-green-400 ">
+            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
               Resources
             </h4>
             <ul className="text-sm">
@@ -40,8 +42,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="w-full md:w-1/4">
-            <h4 className="text-lg font-semibold mb-2 text-green-400 ">
-              Connect With Us
+            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
+              Connect
             </h4>
             <div className="flex space-x-4">
               <a

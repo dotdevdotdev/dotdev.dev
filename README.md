@@ -79,7 +79,7 @@ You can override or extend these styles by adding additional classes:
 </button>
 ```
 
-For more examples, check the `src/pages/FreeApps.js` file.
+For more examples, check the `src/pages/AppIdeas.js` file.
 
 ## 📝 Input Styles
 

@@ -44,6 +44,19 @@ html {
   overflow: hidden;
 }
 
+#header-nav {
+  height: 65px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 65px;
+}
+
 main {
   flex-grow: 1;
 }
@@ -53,35 +66,65 @@ main > section:first-child {
   width: 100%;
 }
 
+/* Fonts */
+.bruno-ace-sc {
+  font-family: "Bruno Ace SC", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Basic heading styles */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.2;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 2.5rem;
+  @apply text-4xl;
 }
-h2 {
+h2,
+.h2 {
   font-size: 2rem;
+  @apply text-3xl;
 }
-h3 {
+h3,
+.h3 {
   font-size: 1.75rem;
+  @apply text-2xl;
 }
-h4 {
+h4,
+.h4 {
   font-size: 1.5rem;
+  @apply text-xl;
 }
-h5 {
+h5,
+.h5 {
   font-size: 1.25rem;
+  @apply text-lg;
 }
-h6 {
+h6,
+.h6 {
   font-size: 1rem;
+  @apply text-base;
+}
+
+p,
+.p {
+  @apply text-base;
 }
 
 /* Basic link styles */
@@ -92,69 +135,58 @@ a {
 }
 
 a:hover {
-  color: #f0fff4; /* text-green-100 */
+  color: #86efac; /* text-green-300 */
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  @apply p-4 rounded flex flex-col gap-1;
+}
+
+.li-green {
+  @apply border border-solid border-green-300 bg-black text-white;
 }
 
 /* Custom button styles */
 .btn {
-  @apply font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out;
+  @apply font-semibold py-3 px-6 rounded-lg transition duration-200 bruno-ace-sc;
+}
+.btn-small {
+  @apply font-semibold py-2 px-4 rounded-lg transition duration-200 bruno-ace-sc;
 }
 
-.btn-green-outline {
-  @apply btn bg-transparent border text-green-300  border-green-300;
+.btn-blue {
+  @apply bg-blue-300 hover:bg-green-300 text-black border border-blue-300 hover:border-green-300  black-neon-glow hover:black-neon-glow;
 }
-
-.btn-green-outline:hover {
-  @apply bg-green-300 text-black;
-}
-
-.btn-green-solid {
-  @apply btn bg-green-300 text-black;
-}
-
-.btn-green-solid:hover {
-  @apply bg-green-400;
-}
-
-.btn-green-transparent {
-  @apply btn bg-transparent text-green-300;
-}
-
-.btn-green-transparent:hover {
-  @apply bg-green-300 bg-opacity-20;
-}
-
 .btn-blue-outline {
-  @apply btn bg-transparent border text-blue-300  border-blue-300;
+  @apply bg-black text-blue-300 border border-blue-300 hover:text-green-300 hover:border-green-300 blue-neon-glow hover:green-neon-glow;
+}
+.btn-blue-link {
+  @apply text-blue-300 hover:text-green-300 blue-neon-glow hover:green-neon-glow;
 }
 
-.btn-blue-outline:hover {
-  @apply bg-blue-300 text-black;
+.btn-green {
+  @apply bg-green-300 hover:bg-blue-300 text-black border border-green-300  hover:border-blue-300 black-neon-glow hover:black-neon-glow;
 }
-
-.btn-blue-solid {
-  @apply btn bg-blue-300 text-black;
+.btn-green-outline {
+  @apply bg-black text-green-300  border border-green-300 hover:text-blue-300 hover:border-blue-300 green-neon-glow hover:blue-neon-glow;
 }
-
-.btn-blue-solid:hover {
-  @apply bg-blue-400;
-}
-
-.btn-blue-transparent {
-  @apply btn bg-transparent text-blue-300;
-}
-
-.btn-blue-transparent:hover {
-  @apply bg-blue-300 bg-opacity-20;
+.btn-green-link {
+  @apply text-green-300 hover:text-blue-300 green-neon-glow hover:blue-neon-glow;
 }
 
 /* Custom input styles */
 .input {
-  @apply w-full py-2 px-3 rounded-lg transition duration-300 ease-in-out focus:outline-none;
+  @apply w-full py-2 px-3 rounded-lg transition duration-300 ease-in-out focus:outline-none font-semibold;
 }
 
 .input-default {
-  @apply input bg-blue-300 bg-opacity-15 text-white font-bold border border-blue-300 focus:border-green-300;
+  @apply input bg-blue-300 bg-opacity-5 text-white border border-blue-300 focus:border-green-300;
 }
 
 .input-green-outline {
@@ -173,10 +205,48 @@ a:hover {
   @apply input bg-blue-300 border border-blue-300 text-black focus:bg-blue-400 focus:border-blue-400;
 }
 
-/* Responsive images */
-img {
-  max-width: 100%;
-  height: auto;
+/* Glows */
+.green-neon-glow {
+  text-shadow: 0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14,
+    0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14;
+  color: #39ff14;
+}
+.hover\:green-neon-glow:hover {
+  text-shadow: 0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14,
+    0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14, 0 0 1.5px #39ff14;
+  color: #39ff14;
+}
+
+.blue-neon-glow {
+  text-shadow: 0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff,
+    0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff;
+  color: #00bfff;
+}
+.hover\:blue-neon-glow:hover {
+  text-shadow: 0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff,
+    0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff, 0 0 1.5px #00bfff;
+  color: #00bfff;
+}
+
+.black-neon-glow {
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000,
+    0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000;
+  color: #000000;
+}
+.hover\:black-neon-glow:hover {
+  text-shadow: 0 0 1.5px #000000, 0 0 1.5px #000000, 0 0 1.5px #000000,
+    0 0 1.5px #000000, 0 0 1.5px #000000, 0 0 1.5px #000000, 0 0 1.5px #000000;
+  color: #000000;
+}
+
+/* Utils */
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.green-heading {
+  @apply text-2xl px-2 font-bold bruno-ace-sc green-neon-glow;
 }
 
 /* Full height slider styles */
