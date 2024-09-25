@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-black shadow-md fixed top-0 left-0 right-0 z-50">
-      <nav id="header-nav" className="flex items-center justify-between">
+    <header>
+      <nav>
         <Link to="/" className="btn btn-green-link text-4xl">
           .dev
         </Link>

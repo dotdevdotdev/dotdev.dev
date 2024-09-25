@@ -3,6 +3,7 @@ import ReactPlayer from "react-player/youtube";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Page from "../components/Page";
 
 const Videos = () => {
   const [videos, setVideos] = useState([]);
@@ -68,30 +69,28 @@ const Videos = () => {
   }
 
   return (
-    <section className="flex-grow pt-16 bg-black">
-      <div className="flex-grow h-full container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-8 text-white">Recent Videos</h1>
-        {videos.length > 0 ? (
-          <Slider {...settings} className="full-height-slider">
-            {videos.map((video) => (
-              <div
-                key={video.snippet.resourceId.videoId}
-                className="flex-grow h-full aspect-w-16 aspect-h-9"
-              >
-                <ReactPlayer
-                  url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
-                  width="100%"
-                  height="100%"
-                  controls={true}
-                />
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          <div className="text-white">No videos found.</div>
-        )}
-      </div>
-    </section>
+    <Page>
+      <h1 className="text-4xl font-bold mb-8 text-white">Recent Videos</h1>
+      {videos.length > 0 ? (
+        <Slider {...settings} className="full-height-slider">
+          {videos.map((video) => (
+            <div
+              key={video.snippet.resourceId.videoId}
+              className="flex-grow h-full aspect-w-16 aspect-h-9"
+            >
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+                width="100%"
+                height="100%"
+                controls={true}
+              />
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <div className="text-white">No videos found.</div>
+      )}
+    </Page>
   );
 };
 

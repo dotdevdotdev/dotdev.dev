@@ -1,11 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
+import Page from "../components/Page";
 
 const Home = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <Page>
       <Hero />
-    </div>
+    </Page>
   );
 };
 

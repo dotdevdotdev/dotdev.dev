@@ -2,7 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Add any global styles here */
 body {
   background-color: black;
   color: #ffffff;
@@ -14,9 +13,42 @@ body {
   background-color: black;
 }
 
-/* Smooth scrolling for the whole page */
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
+#page {
+  @apply bg-black text-white h-full flex flex-col;
+}
+
+.header {
+  height: 65px;
+}
+header {
+  @apply header bg-black shadow-md fixed top-0 left-0 right-0 z-50;
+}
+header > nav {
+  @apply header flex items-center justify-between;
+}
+
+.main {
+  margin: 65px 0.125rem 0 0;
+  padding: 0 0 0 1rem;
+}
+main {
+  @apply main flex h-full flex-grow;
+}
+main > section:first-child {
+  @apply w-full bg-black text-white overflow-hidden;
+}
+main > section:first-child > div:first-child {
+  @apply h-full container mx-auto pr-0.5 overflow-y-scroll;
 }
 
 /* Custom scrollbar styles */
@@ -36,34 +68,6 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #34d399; /* A slightly darker green on hover */
-}
-
-#root {
-  height: 100dvh;
-  width: 100dvw;
-  overflow: hidden;
-}
-
-#header-nav {
-  height: 65px;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  height: 65px;
-}
-
-main {
-  flex-grow: 1;
-}
-
-main > div:first-child,
-main > section:first-child {
-  width: 100%;
 }
 
 /* Fonts */
@@ -122,6 +126,15 @@ h6,
   @apply text-base;
 }
 
+.subtitle {
+  line-height: 0;
+  font-size: 0.875rem;
+}
+
+.with-subtitle {
+  margin-bottom: 0.5rem;
+}
+
 p,
 .p {
   @apply text-base;
@@ -149,7 +162,11 @@ li {
 }
 
 .li-green {
-  @apply border border-solid border-green-300 bg-black text-white;
+  box-shadow: -2px -2px 5px #00bfff, 2px 2px 5px #39ff14; /* text-blue-300 top left, text-green-300 bottom right */
+  transition: box-shadow 0.3s ease;
+}
+.li-green:hover {
+  box-shadow: -2px -2px 10px #39ff14, 2px 2px 10px #93c5fd; /* intensified and flipped colors */
 }
 
 /* Custom button styles */
@@ -239,6 +256,17 @@ li {
   color: #000000;
 }
 
+.white-neon-glow {
+  text-shadow: 0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff,
+    0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff;
+  color: #ffffff;
+}
+.hover\:white-neon-glow:hover {
+  text-shadow: 0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff,
+    0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff, 0 0 1.5px #ffffff;
+  color: #ffffff;
+}
+
 /* Utils */
 
 .no-padding {
@@ -247,6 +275,10 @@ li {
 
 .green-heading {
   @apply text-2xl px-2 font-bold bruno-ace-sc green-neon-glow;
+}
+
+.blue-heading {
+  @apply text-lg font-bold bruno-ace-sc blue-neon-glow;
 }
 
 /* Full height slider styles */

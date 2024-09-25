@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Page from "../components/Page";
 
 const AppIdeas = () => {
   const [ideas, setIdeas] = useState([]);
@@ -66,59 +67,57 @@ const AppIdeas = () => {
   ];
 
   return (
-    <section className="bg-black overflow-hidden">
-      <div className="h-full container mx-auto overflow-y-scroll">
-        <h1 className="green-heading">App Ideas</h1>
-
-        <form onSubmit={submitIdea} className="mb-8">
-          <input
-            type="text"
-            value={newIdea}
-            onChange={(e) => setNewIdea(e.target.value)}
-            placeholder="Enter your app idea"
-            className="input-default"
-            required
-          />
-          <div className="flex justify-end">
-            <button type="submit" className="btn-small btn-blue-link">
-              Submit Idea
-            </button>
-          </div>
-        </form>
-
-        <div>
-          <h2 className=""></h2>
-          {ideas.length > 0 ? (
-            <ul>
-              {/* {ideas.map((idea) => ( */}
-              {exampleIdeas.map((idea) => (
-                <li key={idea._id} className="li-green">
-                  <div className="h4 flex align-center justify-between h-100">
-                    <div className="mb-2 text-white">Top App Ideas</div>
-                    <div className="p">Votes: {idea.votes}</div>
-                  </div>
-                  <div className="flex flex-col gap-1 space-between">
-                    <div>
-                      <div>{idea.title}</div>
-                    </div>
-                    <div className="flex justify-end">
-                      <button
-                        onClick={() => voteForIdea(idea._id)}
-                        className="btn btn-green"
-                      >
-                        Vote
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="text-white">No ideas found.</div>
-          )}
+    <Page>
+      <h1 className="green-heading">App Ideas</h1>
+      <form onSubmit={submitIdea} className="mb-8">
+        <input
+          type="text"
+          value={newIdea}
+          onChange={(e) => setNewIdea(e.target.value)}
+          placeholder="Enter your app idea"
+          className="input-default"
+          required
+        />
+        <div className="flex justify-end">
+          <button type="submit" className="btn-small btn-blue-link">
+            Submit Idea
+          </button>
         </div>
+      </form>
+
+      <div>
+        {ideas.length > 0 ? (
+          <div className="flex flex-col gap-4 pl-2 pr-1">
+            {/* {ideas.map((idea) => ( */}
+            {exampleIdeas.map((idea) => (
+              <div
+                key={idea._id}
+                className="li-green px-4 py-4 flex flex-col gap-1 justify-between"
+              >
+                <div>
+                  <div className="h4 with-subtitle blue-heading">
+                    {idea.title}
+                  </div>
+                  <div className="white-neon-glow subtitle">
+                    Votes: {idea.votes}
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => voteForIdea(idea._id)}
+                    className="btn-small btn-green"
+                  >
+                    Vote
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-white">No ideas found.</div>
+        )}
       </div>
-    </section>
+    </Page>
   );
 };
 
