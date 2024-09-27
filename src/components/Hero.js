@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Page from "./Page";
+// import Page from "./Page";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-full">
       <img
         src={process.env.PUBLIC_URL + "/dotdev-logo-cropped.png"}
         alt="dotdev.dev logo"

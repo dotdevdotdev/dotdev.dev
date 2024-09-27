@@ -87,13 +87,10 @@ const AppIdeas = () => {
 
       <div>
         {ideas.length > 0 ? (
-          <div className="flex flex-col gap-4 pl-2 pr-1">
+          <div className="ul">
             {/* {ideas.map((idea) => ( */}
             {exampleIdeas.map((idea) => (
-              <div
-                key={idea._id}
-                className="li-green px-4 py-4 flex flex-col gap-1 justify-between"
-              >
+              <div key={idea._id} className="li-dualtone">
                 <div>
                   <div className="h4 with-subtitle blue-heading">
                     {idea.title}

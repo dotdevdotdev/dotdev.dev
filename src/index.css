@@ -163,12 +163,22 @@ img {
   height: auto;
 }
 
-.li-green {
-  box-shadow: -2px -2px 5px #00bfff, 2px 2px 5px #39ff14; /* text-blue-300 top left, text-green-300 bottom right */
-  transition: box-shadow 0.3s ease;
+.ul {
+  @apply flex flex-col gap-4 pl-2 pr-1;
 }
-.li-green:hover {
-  box-shadow: -2px -2px 10px #39ff14, 2px 2px 10px #93c5fd; /* intensified and flipped colors */
+
+.li {
+  @apply px-4 py-4 gap-1;
+}
+
+.li-dualtone {
+  @apply li flex flex-col;
+  box-shadow: -2px -2px 5px #00bfff, 2px 2px 5px #39ff14;
+  transition: box-shadow 0.3s ease-out;
+}
+.li-dualtone:hover {
+  box-shadow: unset;
+  box-shadow: -2px -2px 10px #39ff14, 2px 2px 10px #93c5fd;
 }
 
 /* Custom button styles */
