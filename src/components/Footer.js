@@ -2,50 +2,32 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-8">
+    <footer className="bg-black border-t border-green-300">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between">
-          <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
-              .dev
-            </h3>
-            <p className="text-sm">© 2024 dotdev.</p>
-            <p className="text-sm"> All rights reserved.</p>
+        <div className="flex justify-between pt-1">
+          <div className="flex flex-col gap-1 w-full">
+            <div className="green-heading text-sm my-1">.dev</div>
+            <div className="flex flex-col gap-1 text-sm pl-2">
+              <div>© 2024 dotdev</div>
+              <div>All rights reserved.</div>
+            </div>
           </div>
-          <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
-              Quick Links
-            </h4>
-            <ul className="text-sm">
-              <li>
-                <a href="/" className="hover:text-green-300">
-                  Home
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col gap-1 w-full">
+            <div className="green-heading text-sm my-1">Quick Links</div>
+            <div className="flex flex-col gap-1 text-sm pl-2">
+              <a href="/">Home</a>
+            </div>
           </div>
-          <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
-              Resources
-            </h4>
-            <ul className="text-sm">
-              <li>
-                <a href="/videos" className="hover:text-green-300">
-                  Videos
-                </a>
-              </li>
-              <li>
-                <a href="/github" className="hover:text-green-300">
-                  GitHub
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col gap-1 w-full">
+            <div className="green-heading text-sm my-1">Resources</div>
+            <div className="flex flex-col gap-1 text-sm pl-2">
+              <a href="/videos">Videos</a>
+              <a href="/github">GitHub</a>
+            </div>
           </div>
           <div className="w-full md:w-1/4">
-            <h4 className="text-lg font-semibold mb-2 text-green-300 green-neon-glow bruno-ace-sc">
-              Connect
-            </h4>
-            <div className="flex space-x-4">
+            <div className="green-heading text-sm my-1">Connect</div>
+            <div className="flex space-x-4 pt-1 pl-2">
               <a
                 href="https://www.youtube.com/@dotdev_dev"
                 target="_blank"

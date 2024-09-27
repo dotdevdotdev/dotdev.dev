@@ -70,7 +70,7 @@ const Videos = () => {
 
   return (
     <Page>
-      <h1 className="text-4xl font-bold mb-8 text-white">Recent Videos</h1>
+      <div className="green-heading text-2xl mb-8">Recent Videos</div>
       {videos.length > 0 ? (
         <Slider {...settings} className="full-height-slider">
           {videos.map((video) => (

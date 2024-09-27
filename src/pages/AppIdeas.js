@@ -68,7 +68,7 @@ const AppIdeas = () => {
 
   return (
     <Page>
-      <h1 className="green-heading">App Ideas</h1>
+      <h1 className="green-heading text-2xl">App Ideas</h1>
       <form onSubmit={submitIdea} className="mb-8">
         <input
           type="text"

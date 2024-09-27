@@ -48,7 +48,13 @@ main > section:first-child {
   @apply w-full bg-black text-white overflow-hidden;
 }
 main > section:first-child > div:first-child {
-  @apply h-full container mx-auto pr-0.5 overflow-y-scroll;
+  @apply container mx-auto pr-0.5 overflow-y-scroll overflow-x-hidden;
+  height: calc(100dvh - 165px);
+  padding-bottom: 65px;
+}
+
+footer {
+  height: 100px;
 }
 
 /* Custom scrollbar styles */
@@ -155,10 +161,6 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
-}
-
-li {
-  @apply p-4 rounded flex flex-col gap-1;
 }
 
 .li-green {
@@ -274,7 +276,10 @@ li {
 }
 
 .green-heading {
-  @apply text-2xl px-2 font-bold bruno-ace-sc green-neon-glow;
+  @apply px-2 font-bold bruno-ace-sc green-neon-glow;
+}
+.green-heading-lg {
+  @apply text-lg px-2 font-bold bruno-ace-sc text-green-300 green-neon-glow;
 }
 
 .blue-heading {
@@ -285,6 +290,11 @@ li {
 .full-height-slider {
   /* height: 100%; */
   height: calc(100% - 80px);
+}
+
+.full-height-slider.slick-slider.slick-initialized {
+  width: calc(100% - 50px);
+  margin: 0 auto;
 }
 
 .full-height-slider .slick-list,

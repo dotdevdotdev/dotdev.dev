@@ -9,9 +9,9 @@ const Page = ({ children }) => {
       <main id="main">
         <section>
           <div>{children}</div>
+          <Footer />
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Header = () => {
         <Link to="/" className="btn btn-green-link text-4xl">
           .dev
         </Link>
-        <ul className="flex">
+        <ul className="flex gap-4 mr-4">
           <li>
             <Link to="/free-apps" className="btn btn-blue-link no-padding">
               App Ideas
