@@ -69,7 +69,7 @@ const Videos = () => {
   }
 
   return (
-    <Page>
+    <Page fullWidth>
       <div className="green-heading text-2xl mb-8">Recent Videos</div>
       {videos.length > 0 ? (
         <Slider {...settings} className="full-height-slider">

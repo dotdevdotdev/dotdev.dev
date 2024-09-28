@@ -42,17 +42,21 @@ header > nav {
   padding: 0 0 0 1rem;
 }
 main {
-  @apply main flex h-full flex-grow;
+  @apply main flex h-full flex-grow align-middle justify-center;
 }
 main > section:first-child {
   @apply w-full bg-black text-white overflow-hidden;
 }
 main > section:first-child > div:first-child {
   @apply container mx-auto pr-0.5 overflow-y-scroll overflow-x-hidden;
+  max-width: 900px;
   height: calc(100dvh - 165px);
   padding-bottom: 65px;
 }
 
+main > section:first-child > div.full-width:first-child {
+  max-width: 100dvw;
+}
 footer {
   height: 100px;
 }

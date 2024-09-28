@@ -6,27 +6,27 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between pt-1">
           <div className="flex flex-col gap-1 w-full">
-            <div className="green-heading text-sm my-1">.dev</div>
+            <div className="green-heading text-sm mt-2 mb-1">.dev</div>
             <div className="flex flex-col gap-1 text-sm pl-2">
               <div>© 2024 dotdev</div>
               <div>All rights reserved.</div>
             </div>
           </div>
           <div className="flex flex-col gap-1 w-full">
-            <div className="green-heading text-sm my-1">Quick Links</div>
+            <div className="green-heading text-sm mt-2 mb-1">Quick Links</div>
             <div className="flex flex-col gap-1 text-sm pl-2">
               <a href="/">Home</a>
             </div>
           </div>
           <div className="flex flex-col gap-1 w-full">
-            <div className="green-heading text-sm my-1">Resources</div>
+            <div className="green-heading text-sm mt-2 mb-1">Resources</div>
             <div className="flex flex-col gap-1 text-sm pl-2">
               <a href="/videos">Videos</a>
               <a href="/github">GitHub</a>
             </div>
           </div>
           <div className="w-full md:w-1/4">
-            <div className="green-heading text-sm my-1">Connect</div>
+            <div className="green-heading text-sm mt-2 mb-1">Connect</div>
             <div className="flex space-x-4 pt-1 pl-2">
               <a
                 href="https://www.youtube.com/@dotdev_dev"
