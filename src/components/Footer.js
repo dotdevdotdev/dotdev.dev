@@ -44,7 +44,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://discord.gg/53P8evmN"
+                href="https://discord.gg/e6KxXVdJ25"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-green-300"
