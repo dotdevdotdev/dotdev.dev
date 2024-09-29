@@ -27,7 +27,10 @@ const AppIdeas = () => {
   const submitIdea = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/ideas", { title: newIdea });
+      await axios.post(
+        "https://hook.us2.make.com/tr6m9c26ez55cuuylkb589blu674oejb",
+        { USER_INPUT: newIdea }
+      );
       setNewIdea("");
       fetchIdeas();
     } catch (error) {
