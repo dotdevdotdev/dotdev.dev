@@ -25,7 +25,7 @@ async function connectToDatabase() {
 app.get("/api/ideas", async (req, res) => {
   try {
     const ideas = await db
-      .collection("ideas")
+      .collection("app_ideas")
       .find()
       .sort({ votes: -1 })
       .toArray();
@@ -36,16 +36,16 @@ app.get("/api/ideas", async (req, res) => {
   }
 });
 
-app.post("/api/ideas", async (req, res) => {
-  try {
-    const { title } = req.body;
-    const result = await db.collection("ideas").insertOne({ title, votes: 0 });
-    res.status(201).json({ _id: result.insertedId, title, votes: 0 });
-  } catch (error) {
-    console.error("Error submitting idea:", error);
-    res.status(500).json({ error: "Error submitting idea" });
-  }
-});
+// app.post("/api/ideas", async (req, res) => {
+//   try {
+//     const { title } = req.body;
+//     const result = await db.collection("ideas").insertOne({ title, votes: 0 });
+//     res.status(201).json({ _id: result.insertedId, title, votes: 0 });
+//   } catch (error) {
+//     console.error("Error submitting idea:", error);
+//     res.status(500).json({ error: "Error submitting idea" });
+//   }
+// });
 
 app.post("/api/votes", async (req, res) => {
   try {
