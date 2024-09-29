@@ -54,18 +54,6 @@ const AppIdeas = () => {
     return <div className="text-white">Error: {error}</div>;
   }
 
-  let exampleIdeas = [
-    { _id: 1, title: "AI-powered resume builder", votes: 0 },
-    { _id: 2, title: "Social media platform for gamers", votes: 0 },
-    { _id: 3, title: "E-commerce platform for indie artists", votes: 0 },
-    { _id: 4, title: "Language learning app with AR", votes: 0 },
-    { _id: 5, title: "Fitness coaching app with AI", votes: 0 },
-    { _id: 6, title: "Personal finance management app", votes: 0 },
-    { _id: 7, title: "Event planning app with AI", votes: 0 },
-    { _id: 8, title: "Travel planning app with AI", votes: 0 },
-    { _id: 9, title: "Recipe recommendation app with AI", votes: 0 },
-  ];
-
   return (
     <Page>
       <h1 className="green-heading text-2xl">App Ideas</h1>
@@ -88,8 +76,7 @@ const AppIdeas = () => {
       <div>
         {ideas.length > 0 ? (
           <div className="ul">
-            {/* {ideas.map((idea) => ( */}
-            {exampleIdeas.map((idea) => (
+            {ideas.map((idea) => (
               <div key={idea._id} className="li-dualtone">
                 <div>
                   <div className="h4 with-subtitle blue-heading">
