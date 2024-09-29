@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"cross-env NODE_NO_WARNINGS=1 react-scripts start\"",
-    "dev": "react-scripts start",
+    "dev": "npm run start",
     "server": "node server.js",
     "build": "react-scripts build && npm run build-server",
     "build-server": "echo \"// Production server build\" > server.prod.js && cat server.js >> server.prod.js",
