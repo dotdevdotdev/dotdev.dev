@@ -17,19 +17,32 @@ Welcome to the .dev project repository! We're a community of developers, AI enth
 
 Ready to dive in? Here's how to get started:
 
-1. Clone the repository:
+1. Clone the main repository:
    ```
    git clone https://github.com/yourusername/dotdev-project.git
    ```
-2. Install dependencies:
+2. Clone the API of Dreams repository:
    ```
-   npm install
+   git clone https://github.com/yourusername/apiofdreams.git
    ```
-3. Start the development server:
+3. Install dependencies for both projects:
    ```
-   npm start
+   cd dotdev-project && npm install
+   cd ../apiofdreams && npm install
    ```
-4. Open http://localhost:3000 to see the project in action.
+4. Start the API of Dreams server:
+   ```
+   cd apiofdreams && npm start
+   ```
+5. In a new terminal, start the .dev development server:
+   ```
+   cd dotdev-project && npm start
+   ```
+6. Open http://localhost:3000 to see the project in action.
+
+## 🌐 API of Dreams
+
+Our project relies on the API of Dreams (apiofdreams.com) for handling API requests. This system project needs to be set up locally for full functionality during development and testing. Make sure to follow the installation steps above to get both the main project and the API running.
 
 ## 🤝 How It Works
 
@@ -42,6 +55,7 @@ Ready to dive in? Here's how to get started:
 ## 💬 Join Our Community
 
 Our Discord server is the heart of our community. It's where:
+
 - Ideas are shared and discussed
 - Developers connect and collaborate
 - We host live coding sessions and Q&As
