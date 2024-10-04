@@ -27,7 +27,7 @@ const AppIdeas = () => {
   const submitIdea = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://www.apiofdreams.com/v1/new-app-idea", {
+      await axios.post("https://www.apiofdreams.com/v1/app-ideas/new", {
         idea: newIdea,
       });
       setNewIdea("");
@@ -40,7 +40,9 @@ const AppIdeas = () => {
 
   const voteForIdea = async (ideaId) => {
     try {
-      await axios.post("/api/votes", { ideaId });
+      await axios.post("https://www.apiofdreams.com/v1/app-ideas/vote", {
+        ideaId,
+      });
       fetchIdeas();
     } catch (error) {
       console.error("Error voting for idea:", error);
