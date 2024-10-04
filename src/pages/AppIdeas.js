@@ -21,7 +21,7 @@ const AppIdeas = () => {
       console.log("response: ", response);
       // Parse the HTML response here if needed
       // For example: const parsedData = parseHTMLResponse(response.data);
-      setIdeas(response.data);
+      setIdeas(response.data.app_ideas);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching ideas:", error);
