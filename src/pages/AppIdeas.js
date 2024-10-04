@@ -90,7 +90,7 @@ const AppIdeas = () => {
               <div key={idea._id} className="li-dualtone">
                 <div>
                   <div className="h4 with-subtitle blue-heading">
-                    {idea.title}
+                    {idea.idea}
                   </div>
                   <div className="white-neon-glow subtitle">
                     Votes: {idea.votes}
