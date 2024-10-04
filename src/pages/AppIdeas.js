@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Page from "../components/Page";
-
+import { apiRoute } from "../utils/utils";
 const AppIdeas = () => {
   const [ideas, setIdeas] = useState([]);
   const [newIdea, setNewIdea] = useState("");
@@ -27,10 +27,9 @@ const AppIdeas = () => {
   const submitIdea = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://hook.us2.make.com/tr6m9c26ez55cuuylkb589blu674oejb",
-        { USER_INPUT: newIdea }
-      );
+      await axios.post("https://www.apiofdreams.com/v1/new-app-idea", {
+        idea: newIdea,
+      });
       setNewIdea("");
       fetchIdeas();
     } catch (error) {
