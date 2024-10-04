@@ -15,8 +15,9 @@ const AppIdeas = () => {
   const fetchIdeas = async () => {
     try {
       const response = await axios.get(
-        "https://www.apiofdreams.com/v1/app-ideas/all"
+        "https://apiofdreams.com/v1/app-ideas/all"
       );
+      console.log("response: ", response);
       setIdeas(response.data);
       setLoading(false);
     } catch (error) {
