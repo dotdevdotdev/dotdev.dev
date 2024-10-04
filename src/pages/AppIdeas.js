@@ -15,9 +15,12 @@ const AppIdeas = () => {
   const fetchIdeas = async () => {
     try {
       const response = await axios.get(
-        "https://apiofdreams.com/v1/app-ideas/all"
+        "https://www.apiofdreams.com/v1/app-ideas/all",
+        { responseType: "text" }
       );
       console.log("response: ", response);
+      // Parse the HTML response here if needed
+      // For example: const parsedData = parseHTMLResponse(response.data);
       setIdeas(response.data);
       setLoading(false);
     } catch (error) {
