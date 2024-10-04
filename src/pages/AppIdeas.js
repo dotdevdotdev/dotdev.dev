@@ -7,6 +7,7 @@ const AppIdeas = () => {
   const [newIdea, setNewIdea] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [submitTime, setSubmitTime] = useState(0);
 
   useEffect(() => {
     fetchIdeas();
@@ -30,13 +31,70 @@ const AppIdeas = () => {
     }
   };
 
+  // Helper functions for validation
+  const isOnlyNumerical = (str) => /^\d+$/.test(str);
+  const countWords = (str) => str.trim().split(/\s+/).length;
+  const isSingleSentence = (str) => !/[.!?].*[.!?]/.test(str);
+
   const submitIdea = async (e) => {
     e.preventDefault();
+
+    // Trim the idea and perform validations
+    const trimmedIdea = newIdea.trim();
+
+    if (trimmedIdea === "") {
+      alert("Please enter a non-empty idea.");
+      return;
+    }
+
+    if (isOnlyNumerical(trimmedIdea)) {
+      alert("Your idea cannot consist of only numbers.");
+      return;
+    }
+
+    if (countWords(trimmedIdea) < 5) {
+      alert("Your idea should be at least 5 words long.");
+      return;
+    }
+
+    if (trimmedIdea.length < 25) {
+      alert("Your idea should be at least 25 characters long.");
+      return;
+    }
+
+    if (!isSingleSentence(trimmedIdea)) {
+      alert("Your idea should be a single sentence.");
+      return;
+    }
+
+    if (trimmedIdea.length > 200) {
+      alert("Your idea should not exceed 200 characters.");
+      return;
+    }
+
+    // Check for duplicate idea
+    const isDuplicate = ideas.some(
+      (idea) => idea.idea.toLowerCase() === trimmedIdea.toLowerCase()
+    );
+    if (isDuplicate) {
+      alert("This idea already exists. Please submit a unique idea.");
+      return;
+    }
+
+    // Simple anti-bot protection
+    const currentTime = Date.now();
+    if (currentTime - submitTime < 3000) {
+      // 3 seconds cooldown
+      alert("Please wait a moment before submitting another idea.");
+      return;
+    }
+
     try {
       await axios.post("https://www.apiofdreams.com/v1/app-ideas/new", {
-        idea: newIdea,
+        idea: trimmedIdea,
       });
       setNewIdea("");
+      setSubmitTime(currentTime);
       fetchIdeas();
     } catch (error) {
       console.error("Error submitting idea:", error);
